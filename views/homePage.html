@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="../public/styles/homePage.css">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Squads</title>
+</head>
+
+<body>
+  <div>
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img class="h-8 w-8" src="icon-128.png" alt="Workflow">
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="room" target="_blank"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Create
+                  Room</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-4 flex items-center md:ml-6">
+              <!-- Github link -->
+              <div class="ml-3 relative">
+                <div>
+                  <a href="https://github.com/Anubhvv" target="_blank"
+                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                    aria-expanded="false" aria-haspopup="true">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="github.png"
+                      alt="github logo to redirect to github repo of this web app" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+          </div>
+        </div>
+      </div>
+
+      <!-- Home button. -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="/homePage.html"
+            class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-700">
+          <div class="flex items-center px-5">
+          </div>
+        </div>
+    </nav>
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-gray-900">
+          Welcome to Squads
+        </h1>
+      </div>
+    </header>
+    <main>
+      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+          <div class="border-4 border-dashed border-gray-200 rounded-lg h-96 bg-gray-300">
+            <div class="bg-gray-50">
+              <div
+                class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                  <span class="block">Ready to dive in?</span>
+                  <span class="block text-indigo-600">Create your own room</span>
+                </h2>
+                <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                  <div class="inline-flex rounded-md shadow">
+                    <button type='button' onclick="host()"
+                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                      Create Room
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+              <div
+                class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                  <span class="block">Have Invitation link?</span>
+                  <span class="block text-indigo-600">Join the room</span>
+                </h2>
+                <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                  <div class="col-span-6 md:col-span-3">
+                    <input type="text" id="roomLink" placeholder="Enter invite link" name="first_name" id="first_name"
+                      autocomplete="given-name"
+                      class="px-5 py-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-md border-gray-300 rounded-md">
+                  </div>
+                  <div class="ml-3 inline-flex rounded-md shadow border">
+                    <button type="button" onclick="joinRoom()"
+                      class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                      Join Room
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+<script>
+  function host() {
+    window.location.replace("/room");
+  }
+
+  function joinRoom() {
+    var link = document.getElementById("roomLink").value;
+    if (link.slice(0, 4) == 'http')
+      window.location.href = link;
+    else
+      window.location.href = "http://" + link;
+  }
+</script>
+
+</html>
