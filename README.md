@@ -7,7 +7,7 @@ Squads is a video conferencing web app, where users can create rooms, invite oth
 **This project is a part of [Teams Clone- Microsoft Engage'21](https://microsoft.acehacker.com/engage2021/?mc_cid=1b332f034a&mc_eid=6724c88fad).** 
 
 #  What it can do?
-It let's you have video conference with your friends.
+It lets you have video conference with your friends.
 
 #  How it works?
 It uses P2P connection to connect call. Websockets used for signalling.
@@ -86,6 +86,9 @@ For the demo, https://www.youtube.com/watch?v=DudWT4HmgqY
 
 ## References
 https://peerjs.com/docs.html#api
+<br></br>
 https://socket.io/docs/v4
+<br></br>
 https://www.youtube.com/watch?v=PTz2To7zUVM
+<br></br>
 https://www.youtube.com/watch?v=FExZvpVvYxA&t=3526s
