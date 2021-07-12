@@ -93,7 +93,7 @@ For the demo, https://www.youtube.com/watch?v=DudWT4HmgqY
 ### Utilization of Libraries/Modules for rapid development.
 
 ## Contributor
-- [Anubhav Agrawal](https://github.com/anubhvv)
+- [Anubhav Agrawal](https://www.linkedin.com/in/anubhvag/)
 
 
 
