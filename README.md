@@ -51,7 +51,7 @@ For the demo, https://www.youtube.com/watch?v=DudWT4HmgqY
   ![](https://github.com/Anubhvv/readme/blob/main/waitRoom.png?raw=true)
 ### step 4 Share this invite link to your friends via any messaging app or e-mail. And wait for others to join.
 ### step 5 Talk, discuss strategies, send texts to your friends.
-  ![](https://github.com/Anubhvv/readme/blob/main/threeusers.png?raw=true)
+  ![](https://github.com/Anubhvv/readme/blob/main/meeting.png?raw=true)
   
   
 # Features
