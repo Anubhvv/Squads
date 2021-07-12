@@ -2,6 +2,7 @@
 
 # Squads
 [Live](http://squads-app.herokuapp.com/) [(squads-app.herokuapp.com)](http://squads-app.herokuapp.com/)
+![](https://github.com/Anubhvv/readme/blob/main/start%20vid.png?raw=true)
 <br></br>
 Squads is a video conferencing web app, where users can create rooms, invite other users via link, join rooms, group video-audio call with other participants of the same room, and also exchange text messages.
 **This project is a part of [Teams Clone- Microsoft Engage'21](https://microsoft.acehacker.com/engage2021/?mc_cid=1b332f034a&mc_eid=6724c88fad).** 
@@ -42,8 +43,17 @@ Check [document](https://docs.google.com/document/d/e/2PACX-1vQeibxTE70tw_liuFQZ
 
 # Demo
 For the demo, https://www.youtube.com/watch?v=DudWT4HmgqY
-
-
+### step 1 HomePage
+  ![](https://github.com/Anubhvv/readme/blob/main/homepage.png?raw=true)
+### step 2 click on Create Room and enter your Name, click on Next button.
+  ![](https://github.com/Anubhvv/readme/blob/main/enterName.png?raw=true)
+### step 3 This is your waiting room. CLick on camera/ mic button and allow access. Adjust and make yourself comfortable before joining the room. No one can see you at this moment. you can also copy the invite link by a simple click on 'invite Link' button just above your video.
+  ![](https://github.com/Anubhvv/readme/blob/main/waitRoom.png?raw=true)
+### step 4 Share this invite link to your friends via any messaging app or e-mail. And wait for others to join.
+### step 5 Talk, discuss strategies, send texts to your friends.
+  ![](https://github.com/Anubhvv/readme/blob/main/threeusers.png?raw=true)
+  
+  
 # Features
 
 ### Ability to create a room for conferences.
