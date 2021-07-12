@@ -17,30 +17,39 @@ const peeridmap = {}     //key=socketid, val=peerid
 const peerid = [];       //array of peerids
 const userNamesDict = {} //key-socket.id, val=userName
 
+//returns logo (image API)
 app.get("/icon-128.png", (req, res) => {
     res.sendFile(__dirname + '/public/images/icon-128.png');
 })
+
+//for baseUrl returns homepage html
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/homePage.html');
 })
+
+//(image API)
 app.get('/user.png', (req, res) => {
     res.sendFile(__dirname + '/public/images/user.png');
 })
 
+//returns Github logo (image API)
 app.get('/github.png', (req, res) => {
     res.sendFile(__dirname + '/public/images/github.png');
 })
 
+//on clicking create room, we get redirected to /room, where we generate unique roomID and redirect to that room
 app.get('/room', (req, res) => {
     var roomid = uuidv4();
-    createRoom(roomid);
+    createRoom(roomid); //loads html of room for /roomid
     res.redirect('/' + roomid);
 })
 
+//styles
 app.get('/public/styles/homePage.css', (req, res) => {
     res.sendFile(__dirname + '/public/styles/homePage.css');
 })
 
+//styles
 app.get('/public/styles/room.css', (req, res) => {
     res.sendFile(__dirname + '/public/styles/room.css');
 })
@@ -55,10 +64,12 @@ function createRoom(roomid) {
     })
 }
 
+//script for each room
 app.get('/script.js', (req, res) => {
     res.sendFile(__dirname + '/public/scripts/script.js');
 })
 
+//websocket pipeline established  between new client and server
 io.on('connection', socket => {
     socket.broadcast.emit('connected')
     socket.on('send-message', obj => {
@@ -69,10 +80,14 @@ io.on('connection', socket => {
             }
         }
     })
+    
+    //client send their name to server
     socket.on('send-userName', userName => {
         userNamesDict[socket.id] = userName;
         socket.to(roomtos[storoom[socket.id]]).emit('new-user-joined', userName);
     })
+    
+    //maintaining roomtos =>room to socketid 
     socket.on('send-roomid', roomid => {
         storoom[socket.id] = roomid;
         if (roomtos[roomid] != undefined) {
@@ -82,6 +97,8 @@ io.on('connection', socket => {
             roomtos[roomid] = [socket.id];
         }
     })
+    
+    //signalling, user(client) send their peerid to server
     socket.on('send-peerId', id => {
 
         peerid.push(id);
@@ -95,10 +112,13 @@ io.on('connection', socket => {
         }
     }
     )
+    
+    //server sends the caller name to clinet who wil receive the call
     socket.on('get-caller-name', peerid => {
         socket.emit('receive-caller-name', userNamesDict[socketid[peerid]]);
     })
 
+    //remove the clinets data who left the room
     socket.on('disconnect', () => {
         for (var i = 0; i < roomtos[storoom[socket.id]].length; i++) {
             if (roomtos[storoom[socket.id]][i] == socket.id) {
