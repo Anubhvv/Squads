@@ -15,20 +15,23 @@ It uses P2P connection to connect call. Websockets used for signalling.
 # Getting Started
 
 ### Steps to get it working on you local machine.
+```
+git clone https://github.com/Anubhvv/Squads.git
+```
+install [nodejs](https://nodejs.org/en/)
 
-$ git clone https://github.com/Anubhvv/Squads.git
-<br></br>
-$ install nodejs
-<br></br>
-$ npm install socket.io express uuid 
-<br></br>
-$ npm start
-<br></br>
-visit localhost:3232
+```
+npm install socket.io express uuid 
+```
+```
+npm start
+```
+
+visit localhost:3232 in a browser (preferably chrome/ edge)
 
 
 Prerequisites:
-
+(Open source libraries JavaScript)
 nodejs  <br></br>
 express <br></br>
 socket.io<br></br>
