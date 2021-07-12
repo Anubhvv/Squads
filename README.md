@@ -1,7 +1,7 @@
 
 
 # Squads
-[Live](http://squads-app.herokuapp.com/)
+[Live](http://squads-app.herokuapp.com/) [(squads-app.herokuapp.com)](http://squads-app.herokuapp.com/)
 <br></br>
 Squads is a video conferencing web app, where users can create rooms, invite other users via link, join rooms, group video-audio call with other participants of the same room, and also exchange text messages.
 **This project is a part of [Teams Clone- Microsoft Engage'21](https://microsoft.acehacker.com/engage2021/?mc_cid=1b332f034a&mc_eid=6724c88fad).** 
