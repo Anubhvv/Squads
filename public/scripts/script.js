@@ -5,6 +5,7 @@ localVideo.autoplay = true;
 const roomid = window.location.pathname.slice(1);
 let socket = io('/');
 
+//starting video first time
 function startVideo() {
   if (localStream != null) {
     localStream.getVideoTracks()[0].enabled = !(localStream.getVideoTracks()[0].enabled);
@@ -58,8 +59,8 @@ function startVideo() {
   }
 }
 
-//////////////////////////////////////////
 
+//starting audio first time
 function startAudio() {
   if (localStream == null) {
     const mediaStreamConstraints = {
@@ -116,6 +117,7 @@ function startAudio() {
   }
 }
 
+//turn on/off cam
 function toggleVideo() {
   var cam = document.getElementById("camerabutton2");
   if (cam.classList.contains("fa-video")) {
@@ -126,7 +128,7 @@ function toggleVideo() {
   }
   localStream.getVideoTracks()[0].enabled = !(localStream.getVideoTracks()[0].enabled);
 }
-
+//turn on/off mic
 function toggleAudio() {
   var cam = document.getElementById("micbutton2");
   if (cam.classList.contains("fa-microphone")) {
@@ -138,6 +140,7 @@ function toggleAudio() {
   localStream.getAudioTracks()[0].enabled = !(localStream.getAudioTracks()[0].enabled);
 }
 
+//copies invite link to clipboard on clicking
 function copy() {
   console.log("copy button click");
   navigator.clipboard.writeText(location.href).then(function () {
@@ -293,6 +296,8 @@ function Join() {
   });
 }
 //answer call done
+
+//to change video panel dimensions as new users join (video size shrinks)
 function getVideoDimension() {
   {
     let widthMain = document.getElementById("main").offsetWidth;
@@ -334,6 +339,7 @@ function getVideoDimension() {
 
 }
 
+//appends video (either our own or peer)
 function appendVideo(tagId, name) {
   var videoElement = document.createElement('video');
   videoElement.setAttribute('id', 'video' + tagId);
